@@ -59,6 +59,7 @@ public class ParserVisitor extends AbstractTokenVisitor {
             balance++;
             Stack<Operation> oldStack = operationStack;
             nextToken();
+            operationStack = new Stack<>();
             if (currentToken instanceof RightBrace || token instanceof Operation) {
                 throw new ParserException("Illegal tokens after left brace");
             }
