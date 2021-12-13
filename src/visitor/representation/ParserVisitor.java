@@ -99,7 +99,7 @@ public class ParserVisitor extends AbstractTokenVisitor {
             }
             if (!(nextToken instanceof Operation
                     && !operationStack.isEmpty()
-                    && ((Operation) nextToken).getPrior() > operationStack.lastElement().getPrior())) {
+                    && ((Operation) nextToken).getPrior() >= operationStack.lastElement().getPrior())) {
                 nextToken();
                 visit(currentToken);
             }
